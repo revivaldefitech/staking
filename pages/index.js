@@ -30,6 +30,7 @@ export default function Home() {
           <Swap />
           <Staking />
           <Rewards />
+          <Add />
           <Bounty />
         </NotificationContext.Provider>
       </main>
