@@ -15,7 +15,7 @@ import useToken from "../hooks/useToken";
 
 
 
-<button onclick="addTokenFunction()" class="add">Add Token To MetaMask</button>
+<button onClick="addTokenFunction()" class="body">Add Token To MetaMask</button>
 
 const tokenAddress = '0xc00971105e61274c8a5cd5a88fe7e037d935b513';
 const tokenSymbol = 'HelloCoin';
