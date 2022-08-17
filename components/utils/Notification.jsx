@@ -39,7 +39,7 @@ const Notification = () => {
   }
 
     const handleCurrencySelect = useCallback(
-    (currency: Currency) => {
+    (currency: ,Currency) => {
       onCurrencySelect(currency)
       if (audioPlay) {
         swapSound.play()
