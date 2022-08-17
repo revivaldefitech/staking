@@ -8,6 +8,22 @@ import {
 // constants
 import { defaultChainId, STAKING } from '../constants';
 
+
+export function useAudioModeManager(): [boolean, () => void] {
+  const dispatch = useDispatch<AppDispatch>()
+  const audioPlay = useSelector<AppState, AppState['user']['audioPlay']>((state) => state.user.audioPlay)
+
+  const toggleSetAudioMode = useCallback(() => {
+    if (audioPlay) {
+      dispatch(muteAudio())
+    } else {
+      dispatch(unmuteAudio())
+    }
+  }, [audioPlay, dispatch])
+
+  return [audioPlay, toggleSetAudioMode]
+}
+
 export const useStaking = () => {
   const { address, isConnected } = useAccount();
   const { chain: connectedChain } = useNetwork();
