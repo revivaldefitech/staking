@@ -3,10 +3,13 @@ import { useContext } from 'react';
 import { XIcon } from '@heroicons/react/solid';
 // Context
 import NotificationContext from '../../context/NotificationContext';
+import { useAudioModeManager } from 'hooks/useStaking.js';
 
 const Notification = () => {
   const { dismissNotification, showNotification, notification } = useContext(NotificationContext);
 
+  const swapSound = new Audio('swap.mp3');
+  
   const notificationIcon = () => {
     switch (notification?.type) {
       case 'error': return (
@@ -35,6 +38,15 @@ const Notification = () => {
     return desc.slice(0, 100) + '...'
   }
 
+    const handleCurrencySelect = useCallback(
+    (currency: Currency) => {
+      onCurrencySelect(currency)
+      if (audioPlay) {
+        swapSound.play()
+      }
+    },
+    [audioPlay, onCurrencySelect],
+  )
   return (
     <div className={`z-10 toast toast-top toast-end ${showNotification ? '' : 'invisible'}`}>
       <div className={`alert ${notification?.type === 'error' ? 'alert-error' : 'alert-success'} flex items-start shadow-xl max-w-sm break-words`}>
