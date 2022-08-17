@@ -7,7 +7,7 @@ import {
 } from 'wagmi';
 // constants
 import { defaultChainId, STAKING } from '../constants';
-
+import { useAudioModeManager } from 'hooks/useStaking.js'
 
 export function useAudioModeManager(): [boolean, () => void] {
   const dispatch = useDispatch<AppDispatch>()
