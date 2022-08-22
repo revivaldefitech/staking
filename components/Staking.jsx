@@ -12,7 +12,6 @@ import NotificationContext from "../context/NotificationContext";
 // Hooks
 import useStaking from "../hooks/useStaking";
 import useToken from "../hooks/useToken";
-import { useAudioModeManager, useExpertModeManager, useUserSingleHopOnly } from 'hooks/useStaking.js'
 
 const Staking = () => {
 
@@ -23,7 +22,6 @@ const Staking = () => {
     const [amountStaked, setAmountStaked] = useState(0);
     const { address, isConnected } = useAccount();
     const [totalEarned, setTotalEarned] = useState('0');
-      const [audioPlay, toggleSetAudioMode] = useAudioModeManager()
     
     const profitCall = useContractRead({
       addressOrName: STAKING[56].address,
