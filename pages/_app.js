@@ -16,7 +16,7 @@ import { publicProvider } from 'wagmi/providers/public';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
-import { useAudioModeManager } from 'hooks/useStaking.js';
+
 import { chains } from '../constants';
 
 // Components
