@@ -5,7 +5,6 @@ import Rewards from '../components/Rewards';
 import Staking from '../components/Staking';
 import Swap from '../components/Swap';
 import Bounty from '../components/Bounty';
-import Add from '../components/Add';
 // Context
 import NotificationContext from '../context/NotificationContext';
 // Hooks
